@@ -4,25 +4,26 @@ using System.Collections.Generic;
 
 public class GameManagerScript : MonoBehaviour {
 
-	public int currentDay;
-	public List<Player> playerList; 
 
+	//setup variables
+	public static GameManagerScript GM {get; private set;}
 	public enum stateMachine {none, tutorial, decisionStage, workStage};
-	public stateMachine currentState;
 	public bool testMode;
 	public bool debugMode;
+	public List<Player> playerList; 
 
-	public static GameManagerScript GM {get; private set;}
-
-	//testObjects
+	//testing GameObjects
 	TestGMScript GMTest;
+
+	//State variables
+	public int currentDay;
+	public stateMachine currentState;
+
 
 
 	void Awake()
 	{
 		GM = this;
-
-
 	}
 
 	// Use this for initialization
@@ -44,4 +45,6 @@ public class GameManagerScript : MonoBehaviour {
 		GMTest = Gmt.GetComponent<TestGMScript>() as TestGMScript;
 		GMTest.gameObject.transform.parent = this.gameObject.transform;
 	}
+
+
 }
