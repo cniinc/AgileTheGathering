@@ -50,6 +50,8 @@
      <Compile Include="Assets\Scripts\CardSystem\Card.cs" />
      <Compile Include="Assets\Scripts\CardSystem\FrontCard.cs" />
      <Compile Include="Assets\Scripts\CardSystem\Holder.cs" />
+     <Compile Include="Assets\Scripts\CardSystem\SwitchCollider.cs" />
+     <Compile Include="Assets\Scripts\CardSystem\TableOfCardsScript.cs" />
      <Compile Include="Assets\Scripts\GameManagerScript.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\TestGMScript.cs" />
