@@ -1,8 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../covalence_thesis_stable/Assets/Scripts/Atom.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CardSystem/Card.cs">
     <Files>
-      <File FileName="../covalence_thesis_stable/Assets/Scripts/Atom.cs" Line="603" Column="38" />
+      <File FileName="Assets/Scripts/CardSystem/Card.cs" Line="10" Column="2" />
+      <File FileName="Assets/Scripts/CardSystem/FrontCard.cs" Line="3" Column="22" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
