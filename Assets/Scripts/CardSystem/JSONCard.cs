@@ -4,6 +4,8 @@ using System.Collections;
 [System.Serializable]
 public class JSONCard : MonoBehaviour {
 
+	public Card cardPrefab;
+
 	public int id;
 	public string card_type;
 	public string situation;
@@ -55,6 +57,25 @@ public class JSONCard : MonoBehaviour {
 	public void CreateCardObject()
 	{
 		print ("would create card number " + id);
+		Card card = Instantiate (cardPrefab) as Card;
+	}
+
+	public IEnumerator pullMyJSON(int id) 
+	{
+
+		print ("pulling data of card " + id);
+		WWW cardURLReturn = new WWW ("http://gameschool.herokuapp.com/cards/" + id + ".json");
+		yield return cardURLReturn;
+		print (cardURLReturn.text);
+		createJSONCard (cardURLReturn.text);
+
+	}
+
+	public static JSONCard createJSONCard(string urlString)
+	{
+		JSONCard jCard = JsonUtility.FromJson<JSONCard> ("[" + urlString + "]");
+		jCard.CreateCardObject ();
+		return jCard;
 	}
 
 

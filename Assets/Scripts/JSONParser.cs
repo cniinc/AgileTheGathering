@@ -12,10 +12,10 @@ public class JSONParser : MonoBehaviour {
 
 		//StartCoroutine (PullWholeCardList ());
 
-		for (int id = 44; id < 50; id++) {
+		/*for (int id = 44; id < 50; id++) {
 			print ("ID: " + id);
 			StartCoroutine (CreateCardsFromURLs (id));
-		}
+		} */
 	}
 	
 	// Update is called once per frame
@@ -27,6 +27,7 @@ public class JSONParser : MonoBehaviour {
 	{
 		WWW cardList = new WWW ("http://gameschool.herokuapp.com/cards.json");
 		yield return cardList;
+		print (cardList.text);
 		CreateWholeFromJSON (cardList.text);
 	}
 
@@ -35,7 +36,7 @@ public class JSONParser : MonoBehaviour {
 	public void CreateWholeFromJSON(string cardList)
 	{
 		JSONCard jCard = JsonUtility.FromJson<JSONCard> (cardList);
-		GameObject card = Instantiate (cardObject, Vector3.zero, Quaternion.identity) as GameObject;
+		//GameObject card = Instantiate (cardObject, Vector3.zero, Quaternion.identity) as GameObject;
 	}
 
 
@@ -46,7 +47,8 @@ public class JSONParser : MonoBehaviour {
 		print ("pulling data of card " + id);
 		WWW cardURL = new WWW ("http://gameschool.herokuapp.com/cards/" + id + ".json");
 		yield return cardURL;
-		JSONCard jCard = JsonUtility.FromJson<JSONCard> (cardURL.text);
+		print (cardURL.text);
+		JSONCard jCard = JsonUtility.FromJson<JSONCard> ("[" + cardURL.text + "]");
 		jCard.CreateCardObject ();
 
 		
